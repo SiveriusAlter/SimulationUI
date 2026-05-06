@@ -1,4 +1,4 @@
-module org.example.simulation {
+module simulation {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;

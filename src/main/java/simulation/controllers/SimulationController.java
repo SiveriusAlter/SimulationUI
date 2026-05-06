@@ -1,4 +1,4 @@
-package org.example.simulationui;
+package simulation.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

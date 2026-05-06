@@ -1,8 +1,11 @@
-module org.example.simulationui {
+module org.example.simulation {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
-    opens org.example.simulationui to javafx.fxml;
-    exports org.example.simulationui;
+    opens simulation to javafx.fxml;
+    exports simulation;
+    exports simulation.controllers;
+    opens simulation.controllers to javafx.fxml;
 }

@@ -1,4 +1,4 @@
-package org.example.simulationui;
+package simulation;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

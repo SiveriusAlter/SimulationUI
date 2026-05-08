@@ -5,8 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+
+import java.util.function.UnaryOperator;
 
 public class SimulationController {
 
@@ -28,7 +31,13 @@ public class SimulationController {
 
     @FXML
     void inputWorldSize(ActionEvent event) {
-
+        UnaryOperator<TextFormatter.Change> filter = change -> {
+            String text = change.getControlNewText();
+            if (text.matches("\\d{2,3}")) {
+                return change;
+            }
+            return null;
+        };
     }
 
     @FXML

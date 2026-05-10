@@ -8,7 +8,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.util.converter.IntegerStringConverter;
+import simulation.Resources;
+import simulation.entities.actions.Actions;
 
+import java.io.FileNotFoundException;
 import java.util.function.UnaryOperator;
 
 public class SimulationController {
@@ -24,6 +28,8 @@ public class SimulationController {
 
     @FXML
     private TextField worldSize;
+
+    public int size;
 
     @FXML
     private Canvas wordMap = new Canvas();
@@ -46,23 +52,13 @@ public class SimulationController {
     }
 
     @FXML
-    void onStartClick(ActionEvent event) {
-        drawWordMap();
+    void onStartClick(ActionEvent event) throws FileNotFoundException {
+        size = Integer.parseInt(worldSize.getText());
+        Actions.initActions(wordMap, size);
     }
 
     @FXML
     void onStopClick(ActionEvent event) {
 
-    }
-
-    void drawWordMap() {
-        Image image = new Image(getClass().getResourceAsStream("/simulation/view/sprites/wolf.png"));
-        assert wordMap != null;
-        wordMap.setHeight(400);
-        wordMap.setWidth(400);
-
-        wordMap.getGraphicsContext2D().clearRect(0, 0, 400, 400);
-        wordMap.getGraphicsContext2D().setFill(Color.RED);
-        wordMap.getGraphicsContext2D().drawImage(image, 30, 30);
     }
 }

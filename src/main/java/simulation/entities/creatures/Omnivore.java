@@ -1,4 +1,5 @@
 package simulation.entities.creatures;
 
-public class Predator extends Creature {
+public class Omnivore extends Creature {
+
 }

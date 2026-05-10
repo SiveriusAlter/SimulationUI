@@ -19,10 +19,6 @@ public abstract class Creature extends Entity implements Eatable, Eater {
 
     private int satiety = BASE_SATIETY;
 
-    public Creature(String name) {
-        super(name);
-    }
-
     public boolean isAlive() {
         return isAlive;
     }

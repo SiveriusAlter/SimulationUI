@@ -10,9 +10,9 @@ import java.io.IOException;
 public class Simulation extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Simulation.class.getResource("/simulation/view/simulation.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Simulation.class.getResource(Resources.RESOURCES + "simulation.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        Image icon = Resources.loadSprite(Resources.WOLF_PATH);
+        Image icon = Resources.loadSprite(Resources.WOLF);
         stage.setTitle("Simulation");
         stage.getIcons().add(icon);
         stage.setScene(scene);

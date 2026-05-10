@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Simulation extends Application {
@@ -13,7 +12,7 @@ public class Simulation extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Simulation.class.getResource("/simulation/view/simulation.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        Image icon = new Image(getClass().getResourceAsStream("/simulation/view/sprites/wolf.png"));
+        Image icon = Resources.loadSprite(Resources.WOLF_PATH);
         stage.setTitle("Simulation");
         stage.getIcons().add(icon);
         stage.setScene(scene);

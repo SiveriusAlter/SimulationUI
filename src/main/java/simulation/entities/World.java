@@ -1,7 +1,5 @@
 package simulation.entities;
 
-import simulation.entities.interfaces.Eatable;
-
 import java.awt.Point;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +11,7 @@ public class World {
     private int width;
     private int cellSize = 20;
 
-    private Map<Point, Point> entities = new HashMap<Point, Point>();
+    private Map<Point, Entity> entities = new HashMap<Point, Entity>();
 
     public World(int sideSize, int cellSize) {
         this.height = sideSize;
@@ -39,12 +37,12 @@ public class World {
         return cellSize;
     }
 
-    public Point getEntity(Point point) {
+    public Entity getEntity(Point point) {
 
         return entities.get(point);
     }
 
-    public void addEntity(Point point, Point entity) {
+    public void addEntity(Point point, Entity entity) {
         entities.put(point, entity);
     }
 

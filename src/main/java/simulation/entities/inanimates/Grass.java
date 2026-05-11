@@ -7,8 +7,7 @@ public class Grass extends Entity implements Eatable {
     private int calories = 0;
     private static final int GROWTH = 10;
 
-    public Grass(String name, int calories) {
-        super(name);
+    public Grass( int calories) {
         this.calories = calories;
     }
 

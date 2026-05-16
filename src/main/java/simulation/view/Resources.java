@@ -1,4 +1,4 @@
-package simulation;
+package simulation.view;
 
 import javafx.scene.image.Image;
 

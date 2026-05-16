@@ -1,4 +1,4 @@
-package simulation;
+package simulation.engine;
 
 public enum SimulationState {
     INITIAL,

@@ -6,9 +6,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
-import simulation.Simulation;
-import simulation.SimulationState;
-import simulation.WorldRenderer;
+import simulation.engine.Simulation;
+import simulation.view.renderers.WorldRenderer;
 
 import java.io.FileNotFoundException;
 import java.util.function.UnaryOperator;
@@ -94,9 +93,9 @@ public class SimulationController {
             }
         }
         startButton.setDisable(isRun);
-        startButton.setVisible(isRun);
-        pauseButton.setDisable(isRun);
-        pauseButton.setVisible(!isRun);
+        startButton.setVisible(!isRun);
+        pauseButton.setDisable(!isRun);
+        pauseButton.setVisible(isRun);
         worldSize.setDisable(isRun);
         stopButton.setVisible(isRun);
         stopButton.setDisable(!isRun);

@@ -1,4 +1,4 @@
-package simulation;
+package simulation.engine;
 
 import simulation.entities.World;
 

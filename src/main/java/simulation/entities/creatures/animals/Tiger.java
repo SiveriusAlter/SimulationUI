@@ -1,6 +1,6 @@
 package simulation.entities.creatures.animals;
 
-import simulation.Resources;
+import simulation.view.Resources;
 import simulation.entities.creatures.Predator;
 
 public class Tiger extends Predator {

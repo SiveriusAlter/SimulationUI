@@ -1,8 +1,10 @@
-package simulation;
+package simulation.view.renderers;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import simulation.view.Resources;
+import simulation.engine.Simulation;
 import simulation.entities.Entity;
 import simulation.entities.creatures.animals.Wolf;
 

@@ -1,6 +1,5 @@
 package simulation.entities.creatures;
 
-import simulation.entities.World;
 import simulation.entities.interfaces.Eatable;
 import simulation.entities.interfaces.Eater;
 import simulation.entities.Entity;

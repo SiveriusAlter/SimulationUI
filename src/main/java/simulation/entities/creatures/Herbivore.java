@@ -7,4 +7,9 @@ public class Herbivore extends Creature
     public int beEaten(int biteForce) {
         return getHitPoints();
     }
+
+    @Override
+    public void makeMove() {
+
+    }
 }

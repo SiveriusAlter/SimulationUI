@@ -1,10 +1,13 @@
 package simulation.entities.creatures;
 
+import simulation.entities.World;
 import simulation.entities.interfaces.Eatable;
 import simulation.entities.interfaces.Eater;
 import simulation.entities.Entity;
 import simulation.entities.creatures.properties.Hp;
 import simulation.entities.creatures.properties.Speed;
+
+import java.awt.*;
 
 public abstract class Creature extends Entity implements Eatable, Eater {
     private int speed = Speed.MEDIUM.getSpeed();
@@ -18,10 +21,6 @@ public abstract class Creature extends Entity implements Eatable, Eater {
     private static final int DEATH_RATE = 0;
 
     private int satiety = BASE_SATIETY;
-
-    public boolean isAlive() {
-        return isAlive;
-    }
 
     public int getSpeed() {
         return speed;
@@ -43,12 +42,13 @@ public abstract class Creature extends Entity implements Eatable, Eater {
 
 
 
-    public void makeMove() {
+    public void makeMove(Point location) {
         starve();
+        location.move(speed, speed);
 
 
 
-        checkDeath();
+        checkLife();
     }
 
     public int beEaten(int biteForce) {
@@ -81,9 +81,10 @@ public abstract class Creature extends Entity implements Eatable, Eater {
         }
     }
 
-    public void checkDeath() {
+    public boolean checkLife() {
         if(hitPoints <= 0) {
             isAlive = false;
         }
+        return  isAlive;
     }
 }

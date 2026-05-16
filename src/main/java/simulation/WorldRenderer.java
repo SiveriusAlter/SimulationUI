@@ -1,47 +1,44 @@
-package simulation.entities.actions;
+package simulation;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import simulation.Resources;
 import simulation.entities.Entity;
-import simulation.entities.World;
 import simulation.entities.creatures.animals.Wolf;
 
 import java.awt.*;
 import java.io.FileNotFoundException;
 
-public class Actions {
+public class WorldRenderer {
 
-
-    public static Canvas initActions(Canvas canvas, int size) throws FileNotFoundException {
-        canvas = initCanvas(canvas, size);
-        World world = createWorld(size);
+    public Canvas drawWorld(Canvas canvas, Simulation simulation) throws FileNotFoundException {
+        canvas = initCanvas(canvas, simulation.getSize());
         //TODO: сделать логику создания существ.
-        var point = new Point(0, 0);
+        var point = new Point(100, 100);
         var wolf = new Wolf();
+        var world = simulation.getWorld();
         world.addEntity(point, wolf);
 
         return drawEntity(canvas, wolf, point);
     }
 
-    public void turnActions() {
+    public void turnActions(Canvas canvas) {
 
     }
 
-    private static Canvas initCanvas(Canvas canvas, int size) {
+    public Canvas clearWorld(Canvas canvas) {
+        canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        return canvas;
+    }
+
+    private Canvas initCanvas(Canvas canvas, int size) {
         assert canvas != null;
         canvas.setHeight(size);
         canvas.setWidth(size);
         return canvas;
     }
 
-    private static World createWorld(int size) {
-        var world = new World(size, size);
-        return world;
-    }
-
-    private static Canvas drawEntity(Canvas canvas, Entity entity, Point coordinate) throws FileNotFoundException {
+    private Canvas drawEntity(Canvas canvas, Entity entity, Point coordinate) throws FileNotFoundException {
         String spritePath = entity.getSpriteResourcePath();
         Image sprite = Resources.loadSprite(spritePath) ;
         int x = (int) coordinate.getX();

@@ -7,6 +7,10 @@ import java.io.FileNotFoundException;
 
 public class Resources {
     public static final String RESOURCES = "/simulation/view/";
+    public static final String LAYOUT = RESOURCES + "layout.fxml";
+    public static final String SIMULATION = RESOURCES + "simulation.fxml";
+    public static final String START_PAGE = RESOURCES + "start-page.fxml";
+
     public static final String SPRITES = RESOURCES + "sprites/";
 
     public static final String WOLF = getSpritePath("wolf.png");

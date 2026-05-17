@@ -6,13 +6,15 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.layout.StackPane;
 import simulation.engine.Simulation;
 import simulation.view.renderers.WorldRenderer;
 
 import java.io.FileNotFoundException;
 import java.util.function.UnaryOperator;
 
-public class SimulationController {
+public class SimulationController implements Routable {
+
 
     @FXML
     private Button pauseButton;
@@ -34,6 +36,8 @@ public class SimulationController {
     private Simulation simulation;
 
     private WorldRenderer worldRenderer;
+
+    private StackPane root;
 
     @FXML
     public void initialize() {
@@ -99,5 +103,15 @@ public class SimulationController {
         worldSize.setDisable(isRun);
         stopButton.setVisible(isRun);
         stopButton.setDisable(!isRun);
+    }
+
+    @Override
+    public StackPane getLayout() {
+        return root;
+    }
+
+    @Override
+    public void setLayout(StackPane layout) {
+        this.root = layout;
     }
 }
